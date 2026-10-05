@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#170621" />
+  <meta name="description" content="VSP-29 — a neon pixel cybersecurity arcade challenge." />
+  <title>VSP-29 // Cyber Arcade</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scanlines"></div>
+  <div class="stars" id="stars"></div>
+  <div class="cloud-field" id="cloudField" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <header class="brand-bar">
+      <div class="producer-stack"><div class="producer">BY MGF</div><img class="club-logo" src="abedhya-logo.png" alt="" aria-hidden="true" /></div>
+      <div class="tiny-status"><span class="status-dot"></span> SECURE CHANNEL</div>
+      <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button>
+    </header>
+
+    <section id="intro" class="screen active">
+      <div class="hero-orbit orbit-a"></div>
+      <div class="hero-orbit orbit-b"></div>
+      <div class="hero-card glass-card">
+        <div class="eyebrow">CLASSIFIED // INCIDENT 29</div>
+        <h1 class="logo"><span>VSP</span><b>-29</b></h1>
+        <p class="tagline">THE NETWORK IS LYING.</p>
+        <p class="intro-copy">Five cyber challenges. One compromised system. Trust your eyes, your logic and absolutely nothing else.</p>
+        <div class="mini-stats">
+          <span>◈ 5 ROUNDS</span><span>◈ LIVE TIMER</span><span>◈ HIGH SCORE</span>
+        </div>
+        <button class="primary-btn pulse" id="startBtn"><span>▶</span> JACK IN</button>
+        <div class="best-score">BEST SCORE <strong id="bestScore">00000</strong></div>
+      </div>
+      <div class="pixel-cloud cloud-1"></div><div class="pixel-cloud cloud-2"></div>
+    </section>
+
+    <section id="game" class="screen">
+      <div class="hud glass-card">
+        <div><small>ROUND</small><strong id="roundLabel">01 / 05</strong></div>
+        <div class="hud-center"><small>VSP-29</small><div class="signal"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="score-box"><small>SCORE</small><strong id="score">00000</strong><span class="mistake-hud">MISTAKES <b id="mistakeCount">0 / 2</b></span></div>
+      </div>
+      <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+      <div id="gameContent" class="game-content"></div>
+    </section>
+
+    <section id="fail" class="screen">
+      <div class="fail-backdrop"></div>
+      <div class="fail-card glass-card">
+        <div class="fail-icon">✕</div>
+        <div class="eyebrow">MISSION FAILED // CONNECTION TERMINATED</div>
+        <h2>VSP-29<br><span>BREACHED</span></h2>
+        <p class="win-line">Two mistakes were enough. The protocol does not allow a third chance.</p>
+        <div class="result-grid">
+          <div><small>SCORE</small><strong id="failScore">00000</strong></div>
+          <div><small>MISTAKES</small><strong id="failMistakes">2 / 2</strong></div>
+        </div>
+        <div class="medal fail-reason" id="failReason">MISSION FAILED</div>
+      </div>
+    </section>
+
+    <section id="win" class="screen">
+      <div class="victory-backdrop"></div>
+      <div class="win-card glass-card">
+        <div class="trophy">🏆</div>
+        <div class="eyebrow">SYSTEM RESTORED // INCIDENT CLOSED</div>
+        <h2>VSP-29<br><span>COMPLETE</span></h2>
+        <p class="win-line">YOU DIDN'T MEMORIZE CYBERSECURITY.<br><b>YOU SURVIVED IT.</b></p>
+        <div class="result-grid">
+          <div><small>FINAL SCORE</small><strong id="finalScore">00000</strong></div>
+          <div><small>RANK</small><strong id="finalRank">—</strong></div>
+          <div><small>ROUNDS</small><strong>05 / 05</strong></div>
+          <div><small>BREACH</small><strong>CONTAINED</strong></div>
+        </div>
+        <div class="medal" id="medalText">◇ CYBER OPERATIVE ◇</div>
+        <button class="primary-btn" id="replayBtn">↻ RUN IT BACK</button>
+      </div>
+      <div id="confetti"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
